@@ -129,6 +129,13 @@ export function registrarEvento(e, { itemId, itemTipo, acao, motivos = [], nota 
   return { ...e, eventos: [...e.eventos, evento] };
 }
 
+export function ultimaAvaliacao(e, itemId, pessoaId = e.aparelho?.pessoaId) {
+  return [...(e.eventos ?? [])].reverse().find((evento) =>
+    evento.pessoaId === pessoaId && evento.itemId === itemId &&
+    ['gostei', 'nao_gostei'].includes(evento.acao)
+  );
+}
+
 export function registrarMetrica(e, nome, dados = {}) {
   const evento = { nome, dados, criadoEm: agora() };
   return { ...e, metricas: [...(e.metricas ?? []).slice(-99), evento] };

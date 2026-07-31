@@ -1,0 +1,3 @@
+<script>let {label,minimo=$bindable(null),maximo=$bindable(null)}=$props()</script>
+<fieldset><legend>{label}</legend><label>Mínimo R$<input type="number" min="0" step="100" bind:value={minimo} placeholder="Sem mínimo"/></label><label>Máximo R$<input type="number" min="0" step="100" bind:value={maximo} placeholder="Sem máximo"/></label></fieldset>
+<style>fieldset{border:1px solid #293a55;border-radius:12px;padding:12px;margin:14px 0;display:grid;grid-template-columns:1fr 1fr;gap:8px}legend{color:#edf3fb;font-weight:700}label{font-size:10px;color:#91a2b8}input{width:100%;margin-top:5px;background:#081321;border:1px solid #30425d;border-radius:9px;color:white;padding:10px}</style>

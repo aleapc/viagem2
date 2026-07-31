@@ -45,12 +45,33 @@ export const QUALIDADE_PADRAO = {
   escalasMaximas: 1,
 };
 
+export const PREFERENCIAS_PADRAO = {
+  experiencias: [], hospedagemTipos: [], aeroportos: [],
+  hospedagem: { estrelasMin: null, avaliacaoMin: null, avaliacoesMin: null, nivel: '', aceitarSemClassificacao: null },
+  deslocamento: { carroMinutosMax: null, noitesMin: null, noitesMax: null, escalasMax: null, classes: [], evitarMadrugada: false, bagagemObrigatoria: false },
+  orcamento: { diariaMin: null, diariaMax: null, escapadaMin: null, escapadaMax: null, viagemMin: null, viagemMax: null, extrapolaEspecial: false },
+  inegociaveis: [], calibracao: {}, onboardingCompleto: false,
+};
+
+export const CONTEXTO_PADRAO = {
+  companhia: 'casal', dogs: { quantidade: 0, portes: [], taxaMax: null, areaExterna: false },
+  filhos: [], pais: [], amigos: 0, ocasiao: '', dataInicio: '', dataFim: '',
+  orcamentoMin: null, orcamentoMax: null,
+};
+
+const completarPreferencias = (p = {}) => ({
+  ...PREFERENCIAS_PADRAO, ...p,
+  hospedagem: { ...PREFERENCIAS_PADRAO.hospedagem, ...(p.hospedagem ?? {}) },
+  deslocamento: { ...PREFERENCIAS_PADRAO.deslocamento, ...(p.deslocamento ?? {}) },
+  orcamento: { ...PREFERENCIAS_PADRAO.orcamento, ...(p.orcamento ?? {}) },
+});
+
 export function estadoVazio() {
   return {
     versao: 3, qualidadeVersao: 2,
     favoritos: [], descartados: [], escapadasFavoritas: [], gosto: {},
     pessoas: {}, eventos: [], eventosVistos: [], ultimoCompartilhamento: null,
-    buscasSalvas: [], metricas: [],
+    buscasSalvas: [], metricas: [], contextoBusca: { ...CONTEXTO_PADRAO },
     aparelho: { pessoaId: null, id: novoId('aparelho') },
     dupla: { id: null, status: 'solo', cidade: '', parceiroId: null },
     migracao: { precisaEscolherPessoa: false },
@@ -61,10 +82,10 @@ export function migrarEstado(salvo = {}) {
   if (salvo.versao === 3) {
     const base = estadoVazio();
     const pessoas = Object.fromEntries(Object.entries(salvo.pessoas ?? {}).map(([id, p]) => [id, {
-      ...p, id, qualidade: { ...QUALIDADE_PADRAO, ...(p.qualidade ?? {}),
+      ...p, id, preferencias: completarPreferencias(p.preferencias), qualidade: { ...QUALIDADE_PADRAO, ...(p.qualidade ?? {}),
         aceitarSemClassificacao: salvo.qualidadeVersao >= 2 ? (p.qualidade?.aceitarSemClassificacao ?? true) : true },
     }]));
-    return { ...base, ...salvo, pessoas, dupla: { ...base.dupla, ...(salvo.dupla ?? {}) }, aparelho: { ...base.aparelho, ...(salvo.aparelho ?? {}) } };
+    return { ...base, ...salvo, contextoBusca: { ...CONTEXTO_PADRAO, ...(salvo.contextoBusca ?? {}) }, pessoas, dupla: { ...base.dupla, ...(salvo.dupla ?? {}) }, aparelho: { ...base.aparelho, ...(salvo.aparelho ?? {}) } };
   }
   const pessoasAntigas = salvo.casal?.pessoas ?? [];
   const estado = estadoVazio();
@@ -72,7 +93,7 @@ export function migrarEstado(salvo = {}) {
   const pessoas = {};
   for (const [i, p] of pessoasAntigas.entries()) {
     const id = p.id || `p${i + 1}`;
-    pessoas[id] = { id, nome: p.nome ?? '', cor: p.cor ?? (i ? '#F472B6' : '#38BDF8'), qualidade: { ...QUALIDADE_PADRAO }, atualizadoEm: agora() };
+    pessoas[id] = { id, nome: p.nome ?? '', cor: p.cor ?? (i ? '#F472B6' : '#38BDF8'), preferencias: completarPreferencias(), qualidade: { ...QUALIDADE_PADRAO }, atualizadoEm: agora() };
   }
   return {
     ...estado, favoritos: salvo.favoritos ?? [], descartados: salvo.descartados ?? [],
@@ -105,11 +126,18 @@ export function criarPerfil(e, { nome, cidade }) {
   const id = novoId('pessoa');
   return {
     ...e,
-    pessoas: { ...e.pessoas, [id]: { id, nome: nome.trim(), cor: '#38BDF8', qualidade: { ...QUALIDADE_PADRAO }, atualizadoEm: agora() } },
+    pessoas: { ...e.pessoas, [id]: { id, nome: nome.trim(), cor: '#38BDF8', preferencias: completarPreferencias(), qualidade: { ...QUALIDADE_PADRAO }, atualizadoEm: agora() } },
     aparelho: { ...e.aparelho, pessoaId: id },
     dupla: { ...e.dupla, cidade: cidade.trim(), status: 'solo' },
     migracao: { precisaEscolherPessoa: false },
   };
+}
+
+export function salvarOnboarding(e, pessoaId, { nome, cidade, preferencias }) {
+  const pessoa = e.pessoas[pessoaId];
+  if (!pessoa) return e;
+  const completas = completarPreferencias({ ...preferencias, onboardingCompleto: true });
+  return { ...e, pessoas: { ...e.pessoas, [pessoaId]: { ...pessoa, nome: nome.trim(), preferencias: completas, atualizadoEm: agora() } }, gosto: { ...e.gosto, [pessoaId]: completas.experiencias }, dupla: { ...e.dupla, cidade: cidade.trim() } };
 }
 
 export function escolherPessoaMigrada(e, pessoaId) {

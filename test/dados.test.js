@@ -1,6 +1,6 @@
 import test from 'node:test';
 import assert from 'node:assert/strict';
-import { estadoVazio, migrarEstado, criarPerfil, escolherPessoaMigrada, desvincular, registrarEvento, ultimaAvaliacao } from '../src/lib/dados.js';
+import { estadoVazio, migrarEstado, criarPerfil, escolherPessoaMigrada, desvincular, registrarEvento, ultimaAvaliacao, salvarOnboarding } from '../src/lib/dados.js';
 
 test('migra v2 preservando escolhas e pede identidade local', () => {
   const v3 = migrarEstado({ favoritos: ['x'], gosto: { p1: ['praia'] }, casal: { cidade: 'São Paulo', pessoas: [{ id: 'p1', nome: 'Ana' }, { id: 'p2', nome: 'Bia' }] } });
@@ -10,6 +10,15 @@ test('migra v2 preservando escolhas e pede identidade local', () => {
 test('onboarding cria somente a pessoa deste aparelho', () => {
   const e = criarPerfil(estadoVazio(), { nome: 'Ana', cidade: 'São Paulo' });
   assert.equal(Object.keys(e.pessoas).length, 1); assert.equal(e.dupla.status, 'solo');
+});
+test('onboarding salva critérios escolhidos sem inventar limites', () => {
+  let e = criarPerfil(estadoVazio(), { nome:'Ana', cidade:'São Paulo' });
+  const id=e.aparelho.pessoaId;
+  e=salvarOnboarding(e,id,{nome:'Ana',cidade:'Campinas',preferencias:{experiencias:['praia'],hospedagem:{estrelasMin:null},orcamento:{diariaMin:250,diariaMax:900}}});
+  assert.equal(e.pessoas[id].preferencias.onboardingCompleto,true);
+  assert.equal(e.pessoas[id].preferencias.hospedagem.estrelasMin,null);
+  assert.equal(e.pessoas[id].preferencias.orcamento.diariaMax,900);
+  assert.equal(e.dupla.cidade,'Campinas');
 });
 test('desvincular preserva perfil e histórico pessoal', () => {
   let e = criarPerfil(estadoVazio(), { nome: 'Ana', cidade: 'São Paulo' });

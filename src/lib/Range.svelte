@@ -1,0 +1,3 @@
+<script>let {label,value=$bindable(null),min,max,step=1,sufixo=''}=$props();let ativo=$derived(value!=null);function alternar(){value=ativo?null:min}</script>
+<div class="range"><label><input type="checkbox" checked={ativo} onchange={alternar}/> {label}</label>{#if ativo}<input type="range" {min} {max} {step} bind:value/><output>{value}{sufixo}</output>{/if}</div>
+<style>.range{border-top:1px solid #293a55;padding:13px 0;display:grid;grid-template-columns:1fr auto;gap:8px;color:#aebdd0;font-size:12px}.range>input{grid-column:1/-1;width:100%;accent-color:#f5a524}.range label input{width:auto}.range output{color:#f5a524}</style>

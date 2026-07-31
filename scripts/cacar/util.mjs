@@ -4,7 +4,7 @@ import { createHash } from 'node:crypto'
 
 // User-Agent honesto: identifica o app e o dono. Não nos passamos por navegador.
 export const UA =
-  'cacador-viagem/0.1 (+https://github.com/aleapc/cacador; leitor pessoal, 1 req/h)'
+  'viagem2/0.2 (+https://github.com/aleapc/viagem2; leitor pessoal, 1 req/h)'
 
 export async function buscar(url, { tipo = 'text' } = {}) {
   const r = await fetch(url, {

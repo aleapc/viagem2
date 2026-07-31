@@ -1,8 +1,10 @@
-# Caçador
+# Viagem²
 
-Vigia de oportunidades de viagem para o casal. Roda de hora em hora numa GitHub Action, lê as promoções publicadas pelo Melhores Destinos, extrai `{origem, destino, preço}` com a API da Anthropic, cruza com os perfis em `data/perfis.json` e manda no Telegram só o que interessa.
+PWA de curadoria de viagens e escapadas para duas pessoas. O projeto evoluiu a partir do motor do Caçador, cujo histórico original permanece preservado em `aleapc/cacador`.
 
-**Status: v0, motor de promoção.** O PWA e o motor de baseline histórico ainda não existem — ver "O que falta".
+**Site:** https://aleapc.github.io/viagem2/
+
+Roda de hora em hora numa GitHub Action, lê as promoções publicadas pelo Melhores Destinos, extrai `{origem, destino, preço}` com a API da Anthropic e cruza os resultados com as preferências da dupla. A interface oferece onboarding separado, troca por WhatsApp, avaliações persistentes, filtros, Escapadas, Viagens e Salvos.
 
 ## Rodar
 

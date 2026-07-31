@@ -13,7 +13,7 @@
 # Ordem importa: BUILD antes do commit. Se o build quebrar, main e gh-pages
 # ficam como estavam — avançam juntos ou nenhum avança.
 
-name: cacar
+name: atualizar-ofertas-e-publicar
 
 on:
   push:
@@ -33,7 +33,7 @@ permissions:
   contents: write
 
 concurrency:
-  group: cacar
+  group: viagem2-atualizar
   cancel-in-progress: false
 
 jobs:
@@ -67,7 +67,7 @@ jobs:
         run: node scripts/escapadas/run.mjs
 
       - name: Build do PWA
-        run: BASE_PATH=/cacador npm run build
+        run: BASE_PATH=/viagem2 npm run build
 
       # Travas de publicação. As duas já pegaram bug de verdade:
       #  - sem base path, CSS/JS quebram no Pages e o app abre em branco;
@@ -76,13 +76,13 @@ jobs:
       #    localhost e só apareceu no site publicado.
       - name: Conferir build antes de publicar
         run: |
-          grep -q '/cacador/_app' build/index.html || {
-            echo "::error::build/index.html sem o base path /cacador"; exit 1; }
+          grep -q '/viagem2/_app' build/index.html || {
+            echo "::error::build/index.html sem o base path /viagem2"; exit 1; }
           grep -q 'rel="manifest"' build/index.html || {
             echo "::error::build/index.html sem rel=manifest — o PWA não instalaria"; exit 1; }
           test -f build/manifest.webmanifest || {
             echo "::error::manifest.webmanifest não foi gerado"; exit 1; }
-          test -f build/icon-512.png || { echo "::error::icone 512 faltando"; exit 1; }
+          test -f build/viagem2-icon-512.png || { echo "::error::icone 512 faltando"; exit 1; }
           echo "build ok: base path, manifest e ícones presentes"
           touch build/.nojekyll
 

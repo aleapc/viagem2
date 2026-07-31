@@ -2,7 +2,7 @@
   import { CONTEXTO_PADRAO } from './dados.js';
   import MinMax from './MinMax.svelte';
   let { contexto, onaplicar, oncancelar }=$props();
-  let c=$state(structuredClone({...CONTEXTO_PADRAO,...(contexto??{}),dogs:{...CONTEXTO_PADRAO.dogs,...(contexto?.dogs??{})}}));
+  let c=$state(JSON.parse(JSON.stringify({...CONTEXTO_PADRAO,...(contexto??{}),dogs:{...CONTEXTO_PADRAO.dogs,...(contexto?.dogs??{})}})));
   const companhias=[['casal','Só nós dois'],['dogs','Com os dogs'],['filhos','Com filhos'],['pais','Com os pais'],['amigos','Com amigos']];
   const ocasioes=['','Aniversário','Aniversário de casamento','Dia dos Namorados','Dia das Mães','Dia dos Pais','Natal','Réveillon','Feriado','Celebração especial'];
   const adicionar=(campo)=>c[campo]=[...(c[campo]??[]),campo==='filhos'?{idade:0}:{idade:null,mobilidadeReduzida:false}];

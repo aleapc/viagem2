@@ -8,7 +8,7 @@
   let nome = $state(pessoa?.nome ?? '');
   let cidade = $state(cidadeBase);
   let aeroporto = $state((pessoa?.preferencias?.aeroportos ?? []).join(', '));
-  let p = $state(structuredClone({ ...PREFERENCIAS_PADRAO, ...(pessoa?.preferencias ?? {}), hospedagem:{...PREFERENCIAS_PADRAO.hospedagem,...(pessoa?.preferencias?.hospedagem??{})}, deslocamento:{...PREFERENCIAS_PADRAO.deslocamento,...(pessoa?.preferencias?.deslocamento??{})}, orcamento:{...PREFERENCIAS_PADRAO.orcamento,...(pessoa?.preferencias?.orcamento??{})} }));
+  let p = $state(JSON.parse(JSON.stringify({ ...PREFERENCIAS_PADRAO, ...(pessoa?.preferencias ?? {}), hospedagem:{...PREFERENCIAS_PADRAO.hospedagem,...(pessoa?.preferencias?.hospedagem??{})}, deslocamento:{...PREFERENCIAS_PADRAO.deslocamento,...(pessoa?.preferencias?.deslocamento??{})}, orcamento:{...PREFERENCIAS_PADRAO.orcamento,...(pessoa?.preferencias?.orcamento??{})} })));
   const toggle = (lista, valor, max = 99) => lista.includes(valor) ? lista.filter((x)=>x!==valor) : lista.length < max ? [...lista,valor] : lista;
   const opcoesHospedagem = [['hotel','Hotel'],['resort','Resort'],['pousada','Pousada'],['boutique','Hotel-boutique'],['apartamento','Apartamento'],['adult_only','Adult-only']];
   const vetos = [['sem_classificacao','Sem classificação'],['avaliacao_insuficiente','Avaliação insuficiente'],['poucas_avaliacoes','Poucas avaliações'],['simples_demais','Simples demais'],['localizacao_afastada','Localização afastada'],['ambiente_infantil','Ambiente infantil'],['hotel_impessoal','Hotel grande e impessoal'],['madrugada','Voo de madrugada']];

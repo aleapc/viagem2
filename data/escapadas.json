@@ -1,0 +1,225 @@
+{
+  "gerado_em": "2026-07-30T22:17:59.013Z",
+  "semana": "2026-W31",
+  "status": "ok",
+  "praca": "São Paulo",
+  "fonte": "Google Hotels via SerpApi",
+  "periodo": {
+    "checkin": "2026-08-07",
+    "checkout_max": "2026-08-09"
+  },
+  "erros": [],
+  "escapadas": [
+    {
+      "id": "hotel:sa-o-paulo:ChoIvrqy2pyEhvb7ARoNL2cvMTF2NjZjN2JweRAB",
+      "destino": "São Paulo",
+      "nome": "Villa Bem Querer - Hospedaria|Comida e Cerveja Artesanal|Tratamentos Corporais|Vivências|Eventos Exclusivos|Mairiporã",
+      "tipo": "Na cidade",
+      "icone": "🌙",
+      "tags": [
+        "descanso",
+        "gastronomico"
+      ],
+      "distancia": "na própria cidade",
+      "noites": 1,
+      "checkin": "2026-08-07",
+      "checkout": "2026-08-08",
+      "preco_noite": 350,
+      "preco_total": 350,
+      "avaliacao": 5,
+      "avaliacoes": 153,
+      "comodidades": [
+        "Breakfast ($)",
+        "Free Wi-Fi",
+        "Free parking",
+        "Outdoor pool"
+      ],
+      "imagem": "https://lh3.googleusercontent.com/gps-cs-s/AHRPTWlBl4aJ39q8s4ltZ46BobQ-2w7PEFx52xlLsUcZasUHs9Wg2ytKUX4cTnPjyWx6idK1hNiHLgh8uta31wAyupnFeoyvm7ytyRlP8XqED3DWvr_7dgRfeW9p-rkf65UP76d_jYbagTpbQTGy=s287-w287-h192-n-k-no-v1",
+      "descricao": "Uma opção para uma noite a dois.",
+      "fonte": "Google Hotels",
+      "link": "https://sites.google.com/view/villabemquerer/p%C3%A1gina-inicial?authuser=0"
+    },
+    {
+      "id": "hotel:sa-o-paulo:ChoIjseC6KWu-4PdARoNL2cvMTFjc3F6M2dmcRAB",
+      "destino": "São Paulo",
+      "nome": "Blue Tree Premium Morumbi",
+      "tipo": "Na cidade",
+      "icone": "🌙",
+      "tags": [
+        "descanso",
+        "gastronomico"
+      ],
+      "distancia": "na própria cidade",
+      "noites": 1,
+      "checkin": "2026-08-07",
+      "checkout": "2026-08-08",
+      "preco_noite": 447,
+      "preco_total": 447,
+      "avaliacao": 4.5,
+      "avaliacoes": 7281,
+      "comodidades": [
+        "Free breakfast",
+        "Free Wi-Fi",
+        "Parking ($)",
+        "Pools"
+      ],
+      "imagem": "https://lh3.googleusercontent.com/gps-cs-s/AHRPTWmsT7BVoq1XqaluovoutYd9j6tQBvaWQpMrgCna5ea3QCozoQ0XgD4BxiNvVmMO-XGL38FPbCpdmpaCAExIPS8Pa0i5zfTKMbeX1cFqImkGfbPz-l7642skjMSHUGORj11AOcS1lw=s287-w287-h192-n-k-no-v1",
+      "descricao": "Acomodações modernas em um hotel sofisticado com restaurante casual e spa, além de piscinas coberta e externa.",
+      "fonte": "Google Hotels",
+      "link": "https://www.bluetree.com.br/hotel/blue-tree-premium-morumbi/"
+    },
+    {
+      "id": "hotel:sa-o-roque:ChoIn-L2oO2NyvTIARoNL2cvMTF5MmJ6OW55MxAB",
+      "destino": "São Roque",
+      "nome": "Pousada Maria Irani",
+      "tipo": "Perto de casa",
+      "icone": "🍷",
+      "tags": [
+        "gastronomico",
+        "descanso"
+      ],
+      "distancia": "cerca de 1h15 de São Paulo",
+      "noites": 1,
+      "checkin": "2026-08-07",
+      "checkout": "2026-08-08",
+      "preco_noite": 979,
+      "preco_total": 979,
+      "avaliacao": 5,
+      "avaliacoes": 54,
+      "comodidades": [],
+      "imagem": "https://lh3.googleusercontent.com/gps-cs-s/AHRPTWkxH55K241AbqovixjmwdnJhAK1L9BcQy9F-Awzz1WvwmuWSx57GF9X2TmKt1WI6l4svELGpPbcTc8r0JTBn0c3vi0hbhBDzcz0Oxrh1nhQbDF369KC1G3kI423tF43bV02YQb6=s287-w287-h192-n-k-no-v1",
+      "descricao": "Uma opção para uma noite a dois.",
+      "fonte": "Google Hotels",
+      "link": "https://www.booking.com/searchresults.pt-br.html?aid=356986&label=gog235jc-10CAsoIEITcG91c2FkYS1tYXJpYS1pcmFuaUgtWANoIIgBAZgBM7gBF8gBDNgBA-gBAfgBAYgCAagCAbgCxbmaxwbAAgHSAiQ0OWM5OTYwNy00MzZkLTRmNGQtODUyNC1mYWZlZWRkZmJiNWHYAgHgAgE&highlighted_hotels=13354501&redirected=1&city=-672116&hlrd=user_sh&source=hotel&expand_sb=1&keep_landing=1&sid=2a1ed84f0504129a9ee96c9722c1e23d"
+    },
+    {
+      "id": "hotel:sa-o-roque:ChoI_MOtjPzo3pO2ARoNL2cvMTFzczRsMDZ2MhAB",
+      "destino": "São Roque",
+      "nome": "Chalé Canto da Viola",
+      "tipo": "Perto de casa",
+      "icone": "🍷",
+      "tags": [
+        "gastronomico",
+        "descanso"
+      ],
+      "distancia": "cerca de 1h15 de São Paulo",
+      "noites": 1,
+      "checkin": "2026-08-07",
+      "checkout": "2026-08-08",
+      "preco_noite": 356,
+      "preco_total": 356,
+      "avaliacao": 4.9,
+      "avaliacoes": 48,
+      "comodidades": [],
+      "imagem": "https://lh3.googleusercontent.com/gps-cs-s/AHRPTWlt5Hd5NAXTlwwLaraQA4KOcisjlfWiDKSo-xiiuW5geL0zB2F89sqKxG6l-SeBekLLMtvnuQeBjtMi-PsHaRPP_ZZcr5g2Vwhc9qjvxYmEcjVb9dNBI-OkWmM3nGcss6OUHQgh=s287-w287-h192-n-k-no-v1",
+      "descricao": "Uma opção para uma noite a dois.",
+      "fonte": "Google Hotels",
+      "link": "https://instagram.com/chalecantodaviola?igshid=YmMyMTA2M2Y="
+    },
+    {
+      "id": "hotel:cunha:ChkI5-uQuveO6pw6Gg0vZy8xMXd5MXJjNmc3EAE",
+      "destino": "Cunha",
+      "nome": "Hospedagem Quarto Chic",
+      "tipo": "Fim de semana",
+      "icone": "⛰️",
+      "tags": [
+        "natureza",
+        "cultural"
+      ],
+      "distancia": "cerca de 3h de São Paulo",
+      "noites": 2,
+      "checkin": "2026-08-07",
+      "checkout": "2026-08-09",
+      "preco_noite": 210,
+      "preco_total": 420,
+      "avaliacao": 5,
+      "avaliacoes": 26,
+      "comodidades": [],
+      "imagem": "https://lh3.googleusercontent.com/gps-cs-s/AHRPTWkEg6QHoaOx1RTMOtf5u6VS_KrM6US_sbMN5DPWdvVzFsIpHgqCU0wWHaR5H_mZFcfmBCqmtlFeGENxpGy-adm6KhyPhCtioxr3hpSVt4pUKnWOzWyFmYuUJth8jxjZeLTwnf9uEuSQOJau=s287-w287-h192-n-k-no-v1",
+      "descricao": "Uma opção para o fim de semana a dois.",
+      "fonte": "Google Hotels",
+      "link": "https://www.google.com/travel/search?q=pousadas+rom%C3%A2nticas+em+Cunha+SP&hl=pt-br&gl=br"
+    },
+    {
+      "id": "hotel:cunha:ChkI-NfZz8zlmfo-Gg0vZy8xMXozbno0c2YwEAE",
+      "destino": "Cunha",
+      "nome": "Pousada Acordes do Lago",
+      "tipo": "Fim de semana",
+      "icone": "⛰️",
+      "tags": [
+        "natureza",
+        "cultural"
+      ],
+      "distancia": "cerca de 3h de São Paulo",
+      "noites": 2,
+      "checkin": "2026-08-07",
+      "checkout": "2026-08-09",
+      "preco_noite": 342,
+      "preco_total": 684,
+      "avaliacao": 5,
+      "avaliacoes": 2,
+      "comodidades": [],
+      "imagem": "https://lh3.googleusercontent.com/gps-cs-s/AHRPTWkDqWEsOt7JhPzjUJKqlCbao6JU1_WfoNvjelnNvF1Ed5XLgW1tsgA6lZVr7ByXhG2MzfRh_qQ2_s1nUy7SwElKM_XokDtNcxq6ua1NikegGgfyG8ySApVP3xloXKvnPKYjxA7xh0512go=s287-w287-h192-n-k-no-v1",
+      "descricao": "Uma opção para o fim de semana a dois.",
+      "fonte": "Google Hotels",
+      "link": "https://www.instagram.com/pousada_acordesdolago?igsh=MW55aWd3OGNpYWM2cA=="
+    },
+    {
+      "id": "hotel:santos:ChoI6N78i5Lxz-aWARoNL2cvMTF6ajY1eTRuMxAB",
+      "destino": "Santos",
+      "nome": "Hostel Castell di Madre",
+      "tipo": "Perto do mar",
+      "icone": "🌊",
+      "tags": [
+        "praia",
+        "cultural"
+      ],
+      "distancia": "cerca de 1h30 de São Paulo",
+      "noites": 1,
+      "checkin": "2026-08-07",
+      "checkout": "2026-08-08",
+      "preco_noite": 216,
+      "preco_total": 216,
+      "avaliacao": 4.7,
+      "avaliacoes": 56,
+      "comodidades": [
+        "Free Wi-Fi",
+        "Air conditioning",
+        "Kitchen in some rooms"
+      ],
+      "imagem": "https://lh3.googleusercontent.com/gps-cs-s/AHRPTWmjiZfShqXkTV9ZMRGruWjel4yjaEw_T9Qer5BlFHwj0vZcnVuTyC4tywEFPQXkKhmU0mioeYcTYf7NhLmxgit4y0xQFzQEmedFQwNQ8jqGh4NJt_nzShc-54ovYbYQ5vF4clLVwgxtJjY=s287-w287-h192-n-k-no-v1",
+      "descricao": "Uma opção para uma noite a dois.",
+      "fonte": "Google Hotels",
+      "link": "https://www.booking.com/hotel/br/castelinho-pousada-hostel.pt-br.html?label=gen173bo-10CAsoIEIZY2FzdGVsaW5oby1wb3VzYWRhLWhvc3RlbEgzWANoIIgBAZgBM7gBB8gBDdgBA-gBAfgBAYgCAZgCBqgCAbgCruT9xwbAAgHSAiRmZDVjYjE4Ny0yYzU3LTRkNDMtOTJmNS1mNjZkNGZkMmM1NzfYAgHgAgE&sid=45a6608fd998d36ec49c781d69b879a7&dist=0&sb_price_type=total&type=total&"
+    },
+    {
+      "id": "hotel:santos:ChgI06z_466_xHsaDS9nLzExYjd5N3Q3ZzAQAQ",
+      "destino": "Santos",
+      "nome": "Mont Rey Hotel",
+      "tipo": "Perto do mar",
+      "icone": "🌊",
+      "tags": [
+        "praia",
+        "cultural"
+      ],
+      "distancia": "cerca de 1h30 de São Paulo",
+      "noites": 1,
+      "checkin": "2026-08-07",
+      "checkout": "2026-08-08",
+      "preco_noite": 213,
+      "preco_total": 213,
+      "avaliacao": 4.3,
+      "avaliacoes": 2529,
+      "comodidades": [
+        "Free breakfast",
+        "Free Wi-Fi",
+        "Parking ($)",
+        "Air conditioning"
+      ],
+      "imagem": "https://lh3.googleusercontent.com/gps-cs-s/AHRPTWkJbWOkcfPGZ-_8EVWwdhPW6dgAxL3S2fV1T0MTuzZOTVdJiEzuLblwLeINRoO-rt_N26E0UXqtm5GMP3kijZXo5MaGSeEx9-TaK4Eiq3-qG6uTy8J80EqJe_ZHsof6jlBcRrQ=s287-w287-h192-n-k-no-v1",
+      "descricao": "Quartos simples em hotel discreto com café da manhã e Wi-Fi gratuitos, além de uma sala de jogos.",
+      "fonte": "Google Hotels",
+      "link": "http://www.montreyhotel.com.br/"
+    }
+  ]
+}

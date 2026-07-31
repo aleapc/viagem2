@@ -21,7 +21,7 @@ export default defineConfig({
         background_color: '#0B1220',
         display: 'standalone',
         orientation: 'portrait',
-        start_url: `${base}/?app=viagem2-v3`,
+        start_url: `${base}/?app=viagem2-v4`,
         scope: `${base}/`,
         id: `${base}/`,
         icons: [

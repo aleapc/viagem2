@@ -30,7 +30,8 @@ export const janelaCurta = (j) => {
   return `${+d1}/${mes(m1)} → ${+d2}/${mes(m2)}`;
 };
 
-export const CHAVE = 'VIAGEM_PARA_DOIS_v3';
+export const CHAVE = 'VIAGEM_PARA_DOIS_v4';
+const CHAVE_V3 = 'VIAGEM_PARA_DOIS_v3';
 const CHAVE_V2 = 'VIAGEM_PARA_DOIS_v2';
 const CHAVE_V1 = 'CACADOR_v1';
 const agora = () => new Date().toISOString();
@@ -46,7 +47,9 @@ export const QUALIDADE_PADRAO = {
 };
 
 export const PREFERENCIAS_PADRAO = {
-  experiencias: [], hospedagemTipos: [], aeroportos: [],
+  percurso: 'rapido', experiencias: [], experienciasFavoritas: [], atividades: [], hospedagemTipos: [], aeroportos: [],
+  formatos: ['bate_volta','fim_semana','ferias_7'],
+  janelas: [],
   hospedagem: { estrelasMin: null, avaliacaoMin: null, avaliacoesMin: null, nivel: '', aceitarSemClassificacao: null },
   deslocamento: { carroMinutosMax: null, noitesMin: null, noitesMax: null, escalasMax: null, classes: [], evitarMadrugada: false, bagagemObrigatoria: false },
   orcamento: { diariaMin: null, diariaMax: null, escapadaMin: null, escapadaMax: null, viagemMin: null, viagemMax: null, extrapolaEspecial: false },
@@ -54,7 +57,7 @@ export const PREFERENCIAS_PADRAO = {
 };
 
 export const CONTEXTO_PADRAO = {
-  companhia: 'casal', dogs: { quantidade: 0, portes: [], taxaMax: null, areaExterna: false },
+  companhias: [], dogs: { quantidade: 0, portes: [], taxaMax: null, areaExterna: false },
   filhos: [], pais: [], amigos: 0, ocasiao: '', dataInicio: '', dataFim: '',
   orcamentoMin: null, orcamentoMax: null,
 };
@@ -68,7 +71,7 @@ const completarPreferencias = (p = {}) => ({
 
 export function estadoVazio() {
   return {
-    versao: 3, qualidadeVersao: 2,
+    versao: 4, qualidadeVersao: 2,
     favoritos: [], descartados: [], escapadasFavoritas: [], gosto: {},
     pessoas: {}, eventos: [], eventosVistos: [], ultimoCompartilhamento: null,
     buscasSalvas: [], metricas: [], contextoBusca: { ...CONTEXTO_PADRAO },
@@ -79,13 +82,15 @@ export function estadoVazio() {
 }
 
 export function migrarEstado(salvo = {}) {
-  if (salvo.versao === 3) {
+  if (salvo.versao >= 3) {
     const base = estadoVazio();
     const pessoas = Object.fromEntries(Object.entries(salvo.pessoas ?? {}).map(([id, p]) => [id, {
       ...p, id, preferencias: completarPreferencias(p.preferencias), qualidade: { ...QUALIDADE_PADRAO, ...(p.qualidade ?? {}),
         aceitarSemClassificacao: salvo.qualidadeVersao >= 2 ? (p.qualidade?.aceitarSemClassificacao ?? true) : true },
     }]));
-    return { ...base, ...salvo, contextoBusca: { ...CONTEXTO_PADRAO, ...(salvo.contextoBusca ?? {}) }, pessoas, dupla: { ...base.dupla, ...(salvo.dupla ?? {}) }, aparelho: { ...base.aparelho, ...(salvo.aparelho ?? {}) } };
+    const antigo = salvo.contextoBusca ?? {};
+    const companhias = antigo.companhias ?? (antigo.companhia && antigo.companhia !== 'casal' ? [antigo.companhia] : []);
+    return { ...base, ...salvo, versao:4, contextoBusca: { ...CONTEXTO_PADRAO, ...antigo, companhias }, pessoas, dupla: { ...base.dupla, ...(salvo.dupla ?? {}) }, aparelho: { ...base.aparelho, ...(salvo.aparelho ?? {}) } };
   }
   const pessoasAntigas = salvo.casal?.pessoas ?? [];
   const estado = estadoVazio();
@@ -107,16 +112,17 @@ export function lerEstado() {
   try {
     const atual = JSON.parse(localStorage.getItem(CHAVE));
     if (atual) return migrarEstado(atual);
+    const v3 = JSON.parse(localStorage.getItem(CHAVE_V3));
     const v2 = JSON.parse(localStorage.getItem(CHAVE_V2));
     const v1 = JSON.parse(localStorage.getItem(CHAVE_V1));
-    const migrado = migrarEstado(v2 ?? v1 ?? {});
-    if (v2 || v1) gravarEstado(migrado);
+    const migrado = migrarEstado(v3 ?? v2 ?? v1 ?? {});
+    if (v3 || v2 || v1) gravarEstado(migrado);
     return migrado;
   } catch { return estadoVazio(); }
 }
 
 export function gravarEstado(e) {
-  try { localStorage.setItem(CHAVE, JSON.stringify({ ...e, versao: 3 })); } catch { /* Safari privado */ }
+  try { localStorage.setItem(CHAVE, JSON.stringify({ ...e, versao: 4 })); } catch { /* Safari privado */ }
 }
 
 export function pessoaLocal(e) { return e.pessoas?.[e.aparelho?.pessoaId] ?? null; }
@@ -150,6 +156,22 @@ export function desvincular(e) {
   return { ...e, pessoas: localId && e.pessoas[localId] ? { [localId]: e.pessoas[localId] } : {},
     gosto: localId ? { [localId]: e.gosto[localId] ?? [] } : {}, eventosVistos: [],
     dupla: { id: null, status: 'solo', cidade: e.dupla.cidade, parceiroId: null } };
+}
+
+export function arquivarEDesvincular(e, arquivar = true) {
+  const localId = e.aparelho.pessoaId;
+  const arquivo = arquivar && e.dupla?.id ? { id:e.dupla.id, parceiro:e.pessoas?.[e.dupla.parceiroId]?.nome ?? '', eventos:e.eventos ?? [], encerradoEm:agora() } : null;
+  const solo = desvincular(e);
+  return { ...solo, duplasArquivadas: arquivo ? [...(e.duplasArquivadas ?? []), arquivo] : (e.duplasArquivadas ?? []), eventos: arquivar ? (e.eventos ?? []) : (e.eventos ?? []).filter((x)=>x.pessoaId===localId) };
+}
+
+export function sugerirAjustePerfil(e, pessoaId) {
+  const recentes=(e.eventos??[]).filter((x)=>x.pessoaId===pessoaId&&x.acao==='gostei').slice(-8);
+  const motivos=recentes.flatMap((x)=>x.motivos??[]);
+  const contagem=motivos.reduce((a,x)=>({...a,[x]:(a[x]??0)+1}),{});
+  const [motivo,vezes]=Object.entries(contagem).sort((a,b)=>b[1]-a[1])[0]??[];
+  const jaAplicado=e.pessoas?.[pessoaId]?.preferencias?.atividades?.includes(motivo);
+  return vezes>=3 && !jaAplicado ? { motivo, vezes, texto:`Você destacou “${motivo}” ${vezes} vezes. Usar isso como preferência?` } : null;
 }
 
 export function registrarEvento(e, { itemId, itemTipo, acao, motivos = [], nota = '' }) {

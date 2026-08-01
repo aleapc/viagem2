@@ -24,6 +24,7 @@ test('mobilidade de pais exige acessibilidade confirmada', () => {
   const contexto={...CONTEXTO_PADRAO,companhia:'pais',pais:[{idade:78,mobilidadeReduzida:true}]};
   assert.equal(avaliarCriterios(hotel,pessoa(),contexto).passa,false);
 });
+test('filtros temporários combinam filhos e dogs',()=>{const c={...CONTEXTO_PADRAO,companhias:['filhos','dogs']};assert.equal(avaliarCriterios({...hotel,familyFriendly:true,petFriendly:false},pessoa(),c).passa,false);assert.equal(avaliarCriterios({...hotel,familyFriendly:true,petFriendly:true},pessoa(),c).passa,true)});
 test('qualquer inegociável da dupla é respeitado', () => {
   const flex=pessoa(); const rigor=pessoa({hospedagem:{avaliacaoMin:4.5}});
   assert.equal(avaliarDupla(hotel,[flex,rigor],CONTEXTO_PADRAO).passa,false);

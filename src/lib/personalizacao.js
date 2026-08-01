@@ -29,14 +29,15 @@ export function avaliarCriterios(item, pessoa, contexto = {}) {
     if (d.escalasMax != null && item.escalas != null) exigir(item.escalas <= numero(d.escalasMax), `máximo de ${d.escalasMax} escala(s)`);
   }
 
-  if (vetos.has('sem_classificacao') && !item.estrelas) falhas.push('hospedagem sem classificação');
-  if (vetos.has('madrugada') && item.vooMadrugada === true) falhas.push('voo de madrugada');
-  if (vetos.has('localizacao_afastada') && item.localizacaoAfastada === true) falhas.push('localização afastada');
-  if (vetos.has('ambiente_infantil') && item.ambienteInfantil === true) falhas.push('ambiente infantil');
+  if (vetos.has('sem_madrugada') && item.vooMadrugada === true) falhas.push('voo de madrugada');
+  if (vetos.has('direto') && item.escalas != null && item.escalas > 0) falhas.push('voo com escala');
+  if (vetos.has('nao_fumante') && item.naoFumante !== true) falhas.push('ambiente não fumante não confirmado');
+  if (vetos.has('adult_only') && item.adultOnly !== true) falhas.push('propriedade adult-only não confirmada');
 
-  if (contexto.companhia === 'dogs') exigir(item.petFriendly === true, 'aceitação de pets confirmada');
-  if (contexto.companhia === 'filhos') exigir(item.familyFriendly === true, 'estrutura familiar confirmada');
-  if (contexto.companhia === 'pais' && contexto.pais?.some((x) => x.mobilidadeReduzida)) exigir(item.acessivel === true, 'acessibilidade confirmada');
+  const companhias=contexto.companhias?.length ? contexto.companhias : (contexto.companhia&&contexto.companhia!=='casal'?[contexto.companhia]:[]);
+  if (companhias.includes('dogs')) exigir(item.petFriendly === true, 'aceitação de pets confirmada');
+  if (companhias.includes('filhos')) exigir(item.familyFriendly === true, 'estrutura familiar confirmada');
+  if (companhias.includes('pais') && contexto.pais?.some((x) => x.mobilidadeReduzida)) exigir(item.acessivel === true, 'acessibilidade confirmada');
   const preco = numero(item.preco_total ?? (item.preco_brl * (item.por_pessoa ? 2 : 1)));
   if (contexto.orcamentoMin != null) exigir(preco >= numero(contexto.orcamentoMin), `orçamento mínimo de R$ ${contexto.orcamentoMin}`);
   if (contexto.orcamentoMax != null) exigir(preco <= numero(contexto.orcamentoMax), `orçamento máximo de R$ ${contexto.orcamentoMax}`);
@@ -58,7 +59,8 @@ export function avaliarDupla(item, pessoas, contexto) {
 
 export const resumoContexto = (c = {}) => {
   const partes = [];
-  if (c.companhia && c.companhia !== 'casal') partes.push({ dogs: 'com os dogs', filhos: 'com filhos', pais: 'com os pais', amigos: 'com amigos' }[c.companhia]);
+  const companhias=c.companhias?.length ? c.companhias : (c.companhia&&c.companhia!=='casal'?[c.companhia]:[]);
+  if (companhias.length) partes.push(companhias.map(x=>({dogs:'dogs',filhos:'filhos',pais:'pais',amigos:'amigos',outros:'outros'}[x]??x)).join(' + '));
   if (c.ocasiao) partes.push(c.ocasiao);
   if (c.orcamentoMin != null || c.orcamentoMax != null) partes.push(`R$ ${c.orcamentoMin ?? 0}–${c.orcamentoMax ?? 'sem limite'}`);
   return partes.filter(Boolean).join(' · ') || 'Só vocês dois · sem filtros temporários';

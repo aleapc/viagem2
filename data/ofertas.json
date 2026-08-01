@@ -1,12 +1,12 @@
 {
-  "gerado_em": "2026-08-01T00:32:41.942Z",
-  "visto_ate": "2026-07-31T17:43:12+00:00",
+  "gerado_em": "2026-08-01T03:55:37.010Z",
+  "visto_ate": "2026-07-31T22:45:52+00:00",
   "ultimo_explore": "2026-07-31",
   "fontes": [
     {
       "nome": "melhores-destinos",
-      "candidatos": 3,
-      "lidas": 3,
+      "candidatos": 1,
+      "lidas": 1,
       "status": "ok"
     },
     {
@@ -207,9 +207,9 @@
     "https://t.me/promopassagens/110057"
   ],
   "funil": {
-    "candidatos_do_slug": 3,
-    "materias_lidas": 3,
-    "extracoes_falhas": 3,
+    "candidatos_do_slug": 1,
+    "materias_lidas": 1,
+    "extracoes_falhas": 1,
     "ofertas_extraidas": 0,
     "explore_destinos": 0,
     "explore_status": "nao_rodou",

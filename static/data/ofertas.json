@@ -1,13 +1,13 @@
 {
-  "gerado_em": "2026-08-04T12:20:22.745Z",
+  "gerado_em": "2026-08-04T15:37:01.805Z",
   "visto_ate": "2026-08-04T11:50:28+00:00",
   "ultimo_explore": "2026-07-31",
   "fontes": [
     {
       "nome": "melhores-destinos",
-      "candidatos": 2,
-      "lidas": 2,
-      "status": "ok"
+      "candidatos": 0,
+      "lidas": 0,
+      "status": "vazio"
     },
     {
       "nome": "google-explore",
@@ -32,10 +32,12 @@
     {
       "nome": "tg:promopassagens",
       "novos": 0,
-      "status": "ok"
+      "status": "vazio"
     }
   ],
   "telegram_vistos": [
+    "https://t.me/melhoresdestinos/18795",
+    "https://t.me/melhoresdestinos/18791",
     "https://t.me/melhoresdestinos/18789",
     "https://t.me/melhoresdestinos/18788",
     "https://t.me/canalpontospravoar/26905",
@@ -256,9 +258,9 @@
     "https://t.me/promopassagens/110057"
   ],
   "funil": {
-    "candidatos_do_slug": 2,
-    "materias_lidas": 2,
-    "extracoes_falhas": 4,
+    "candidatos_do_slug": 0,
+    "materias_lidas": 0,
+    "extracoes_falhas": 2,
     "ofertas_extraidas": 0,
     "explore_destinos": 0,
     "explore_status": "nao_rodou",
@@ -287,9 +289,7 @@
       }
     }
   },
-  "avisos": [
-    "leu matéria e extraiu ZERO oferta — extrator ou prompt quebrado?"
-  ],
+  "avisos": [],
   "perfis": [
     {
       "id": "ale-andreia",

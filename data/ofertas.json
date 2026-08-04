@@ -1,13 +1,13 @@
 {
-  "gerado_em": "2026-08-04T09:59:46.835Z",
-  "visto_ate": "2026-08-03T16:53:21+00:00",
+  "gerado_em": "2026-08-04T12:20:22.745Z",
+  "visto_ate": "2026-08-04T11:50:28+00:00",
   "ultimo_explore": "2026-07-31",
   "fontes": [
     {
       "nome": "melhores-destinos",
-      "candidatos": 0,
-      "lidas": 0,
-      "status": "vazio"
+      "candidatos": 2,
+      "lidas": 2,
+      "status": "ok"
     },
     {
       "nome": "google-explore",
@@ -16,7 +16,7 @@
     },
     {
       "nome": "tg:melhoresdestinos",
-      "novos": 0,
+      "novos": 2,
       "status": "ok"
     },
     {
@@ -36,6 +36,8 @@
     }
   ],
   "telegram_vistos": [
+    "https://t.me/melhoresdestinos/18789",
+    "https://t.me/melhoresdestinos/18788",
     "https://t.me/canalpontospravoar/26905",
     "https://t.me/melhoresdestinos/18787",
     "https://t.me/passageirodeprimeira/28004",
@@ -254,9 +256,9 @@
     "https://t.me/promopassagens/110057"
   ],
   "funil": {
-    "candidatos_do_slug": 0,
-    "materias_lidas": 0,
-    "extracoes_falhas": 0,
+    "candidatos_do_slug": 2,
+    "materias_lidas": 2,
+    "extracoes_falhas": 4,
     "ofertas_extraidas": 0,
     "explore_destinos": 0,
     "explore_status": "nao_rodou",
@@ -285,7 +287,9 @@
       }
     }
   },
-  "avisos": [],
+  "avisos": [
+    "leu matéria e extraiu ZERO oferta — extrator ou prompt quebrado?"
+  ],
   "perfis": [
     {
       "id": "ale-andreia",

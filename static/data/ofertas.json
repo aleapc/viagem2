@@ -1,13 +1,13 @@
 {
-  "gerado_em": "2026-08-06T12:20:54.881Z",
-  "visto_ate": "2026-08-05T22:51:09+00:00",
+  "gerado_em": "2026-08-06T15:31:01.287Z",
+  "visto_ate": "2026-08-06T10:28:11+00:00",
   "ultimo_explore": "2026-07-31",
   "fontes": [
     {
       "nome": "melhores-destinos",
-      "candidatos": 0,
-      "lidas": 0,
-      "status": "vazio"
+      "candidatos": 1,
+      "lidas": 1,
+      "status": "ok"
     },
     {
       "nome": "google-explore",
@@ -16,26 +16,28 @@
     },
     {
       "nome": "tg:melhoresdestinos",
-      "novos": 1,
+      "novos": 2,
       "status": "ok"
     },
     {
       "nome": "tg:passageirodeprimeira",
-      "novos": 1,
+      "novos": 0,
       "status": "ok"
     },
     {
       "nome": "tg:canalpontospravoar",
       "novos": 0,
-      "status": "ok"
+      "status": "vazio"
     },
     {
       "nome": "tg:promopassagens",
-      "novos": 1,
+      "novos": 0,
       "status": "ok"
     }
   ],
   "telegram_vistos": [
+    "https://t.me/melhoresdestinos/18831",
+    "https://t.me/melhoresdestinos/18828",
     "https://t.me/melhoresdestinos/18825",
     "https://t.me/passageirodeprimeira/28046",
     "https://t.me/promopassagens/110654",
@@ -294,8 +296,8 @@
     "https://t.me/promopassagens/110057"
   ],
   "funil": {
-    "candidatos_do_slug": 0,
-    "materias_lidas": 0,
+    "candidatos_do_slug": 1,
+    "materias_lidas": 1,
     "extracoes_falhas": 3,
     "ofertas_extraidas": 0,
     "explore_destinos": 0,
@@ -325,7 +327,9 @@
       }
     }
   },
-  "avisos": [],
+  "avisos": [
+    "leu matéria e extraiu ZERO oferta — extrator ou prompt quebrado?"
+  ],
   "perfis": [
     {
       "id": "ale-andreia",

@@ -1,5 +1,5 @@
 {
-  "gerado_em": "2026-08-07T10:15:23.887Z",
+  "gerado_em": "2026-08-07T11:11:25.301Z",
   "visto_ate": "2026-08-06T18:15:02+00:00",
   "ultimo_explore": "2026-07-31",
   "fontes": [
@@ -16,7 +16,7 @@
     },
     {
       "nome": "tg:melhoresdestinos",
-      "novos": 0,
+      "novos": 1,
       "status": "ok"
     },
     {
@@ -32,10 +32,11 @@
     {
       "nome": "tg:promopassagens",
       "novos": 0,
-      "status": "ok"
+      "status": "vazio"
     }
   ],
   "telegram_vistos": [
+    "https://t.me/melhoresdestinos/18841",
     "https://t.me/melhoresdestinos/18838",
     "https://t.me/melhoresdestinos/18837",
     "https://t.me/melhoresdestinos/18836",
@@ -308,7 +309,7 @@
   "funil": {
     "candidatos_do_slug": 0,
     "materias_lidas": 0,
-    "extracoes_falhas": 0,
+    "extracoes_falhas": 1,
     "ofertas_extraidas": 0,
     "explore_destinos": 0,
     "explore_status": "nao_rodou",

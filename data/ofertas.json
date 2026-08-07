@@ -1,5 +1,5 @@
 {
-  "gerado_em": "2026-08-07T17:10:06.810Z",
+  "gerado_em": "2026-08-07T18:04:16.116Z",
   "visto_ate": "2026-08-07T11:58:04+00:00",
   "ultimo_explore": "2026-07-31",
   "fontes": [
@@ -16,7 +16,7 @@
     },
     {
       "nome": "tg:melhoresdestinos",
-      "novos": 1,
+      "novos": 0,
       "status": "ok"
     },
     {
@@ -319,7 +319,7 @@
   "funil": {
     "candidatos_do_slug": 0,
     "materias_lidas": 0,
-    "extracoes_falhas": 1,
+    "extracoes_falhas": 0,
     "ofertas_extraidas": 0,
     "explore_destinos": 0,
     "explore_status": "nao_rodou",

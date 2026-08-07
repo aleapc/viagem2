@@ -1,12 +1,12 @@
 {
-  "gerado_em": "2026-08-06T15:31:01.287Z",
-  "visto_ate": "2026-08-06T10:28:11+00:00",
+  "gerado_em": "2026-08-07T00:17:08.235Z",
+  "visto_ate": "2026-08-06T18:15:02+00:00",
   "ultimo_explore": "2026-07-31",
   "fontes": [
     {
       "nome": "melhores-destinos",
-      "candidatos": 1,
-      "lidas": 1,
+      "candidatos": 2,
+      "lidas": 2,
       "status": "ok"
     },
     {
@@ -16,26 +16,36 @@
     },
     {
       "nome": "tg:melhoresdestinos",
-      "novos": 2,
+      "novos": 6,
       "status": "ok"
     },
     {
       "nome": "tg:passageirodeprimeira",
-      "novos": 0,
+      "novos": 2,
       "status": "ok"
     },
     {
       "nome": "tg:canalpontospravoar",
-      "novos": 0,
-      "status": "vazio"
+      "novos": 1,
+      "status": "ok"
     },
     {
       "nome": "tg:promopassagens",
-      "novos": 0,
+      "novos": 1,
       "status": "ok"
     }
   ],
   "telegram_vistos": [
+    "https://t.me/melhoresdestinos/18838",
+    "https://t.me/melhoresdestinos/18837",
+    "https://t.me/melhoresdestinos/18836",
+    "https://t.me/melhoresdestinos/18835",
+    "https://t.me/melhoresdestinos/18834",
+    "https://t.me/melhoresdestinos/18833",
+    "https://t.me/passageirodeprimeira/28058",
+    "https://t.me/passageirodeprimeira/28056",
+    "https://t.me/canalpontospravoar/26973",
+    "https://t.me/promopassagens/110680",
     "https://t.me/melhoresdestinos/18831",
     "https://t.me/melhoresdestinos/18828",
     "https://t.me/melhoresdestinos/18825",
@@ -296,9 +306,9 @@
     "https://t.me/promopassagens/110057"
   ],
   "funil": {
-    "candidatos_do_slug": 1,
-    "materias_lidas": 1,
-    "extracoes_falhas": 3,
+    "candidatos_do_slug": 2,
+    "materias_lidas": 2,
+    "extracoes_falhas": 12,
     "ofertas_extraidas": 0,
     "explore_destinos": 0,
     "explore_status": "nao_rodou",

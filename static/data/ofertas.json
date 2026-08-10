@@ -1,5 +1,5 @@
 {
-  "gerado_em": "2026-08-10T12:01:07.490Z",
+  "gerado_em": "2026-08-10T13:46:43.703Z",
   "visto_ate": "2026-08-09T21:42:32+00:00",
   "ultimo_explore": "2026-07-31",
   "fontes": [
@@ -22,7 +22,7 @@
     {
       "nome": "tg:passageirodeprimeira",
       "novos": 0,
-      "status": "ok"
+      "status": "vazio"
     },
     {
       "nome": "tg:canalpontospravoar",
@@ -36,6 +36,8 @@
     }
   ],
   "telegram_vistos": [
+    "https://t.me/melhoresdestinos/18885",
+    "https://t.me/melhoresdestinos/18884",
     "https://t.me/melhoresdestinos/18880",
     "https://t.me/melhoresdestinos/18879",
     "https://t.me/promopassagens/110789",

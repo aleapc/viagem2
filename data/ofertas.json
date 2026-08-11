@@ -1,5 +1,5 @@
 {
-  "gerado_em": "2026-08-11T21:05:51.404Z",
+  "gerado_em": "2026-08-11T22:06:25.609Z",
   "visto_ate": "2026-08-11T13:14:31+00:00",
   "ultimo_explore": "2026-07-31",
   "fontes": [
@@ -16,7 +16,7 @@
     },
     {
       "nome": "tg:melhoresdestinos",
-      "novos": 1,
+      "novos": 0,
       "status": "ok"
     },
     {
@@ -31,11 +31,17 @@
     },
     {
       "nome": "tg:promopassagens",
-      "novos": 2,
+      "novos": 5,
       "status": "ok"
     }
   ],
   "telegram_vistos": [
+    "https://t.me/passageirodeprimeira/28155",
+    "https://t.me/promopassagens/110890",
+    "https://t.me/promopassagens/110889",
+    "https://t.me/promopassagens/110887",
+    "https://t.me/promopassagens/110886",
+    "https://t.me/promopassagens/110884",
     "https://t.me/melhoresdestinos/18917",
     "https://t.me/passageirodeprimeira/28152",
     "https://t.me/promopassagens/110879",
@@ -394,7 +400,7 @@
   "funil": {
     "candidatos_do_slug": 0,
     "materias_lidas": 0,
-    "extracoes_falhas": 4,
+    "extracoes_falhas": 6,
     "ofertas_extraidas": 0,
     "explore_destinos": 0,
     "explore_status": "nao_rodou",

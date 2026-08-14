@@ -1,5 +1,5 @@
 {
-  "gerado_em": "2026-08-14T21:42:43.978Z",
+  "gerado_em": "2026-08-14T22:42:16.370Z",
   "visto_ate": "2026-08-14T11:59:23+00:00",
   "ultimo_explore": "2026-07-31",
   "fontes": [
@@ -16,7 +16,7 @@
     },
     {
       "nome": "tg:melhoresdestinos",
-      "novos": 1,
+      "novos": 0,
       "status": "ok"
     },
     {
@@ -31,11 +31,13 @@
     },
     {
       "nome": "tg:promopassagens",
-      "novos": 1,
+      "novos": 2,
       "status": "ok"
     }
   ],
   "telegram_vistos": [
+    "https://t.me/promopassagens/111030",
+    "https://t.me/promopassagens/111028",
     "https://t.me/melhoresdestinos/18972",
     "https://t.me/promopassagens/111022",
     "https://t.me/passageirodeprimeira/28221",

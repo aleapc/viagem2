@@ -1,5 +1,5 @@
 {
-  "gerado_em": "2026-08-15T10:41:51.788Z",
+  "gerado_em": "2026-08-15T11:35:19.524Z",
   "visto_ate": "2026-08-15T04:47:43+00:00",
   "ultimo_explore": "2026-07-31",
   "fontes": [
@@ -31,11 +31,12 @@
     },
     {
       "nome": "tg:promopassagens",
-      "novos": 0,
+      "novos": 1,
       "status": "ok"
     }
   ],
   "telegram_vistos": [
+    "https://t.me/promopassagens/111034",
     "https://t.me/promopassagens/111030",
     "https://t.me/promopassagens/111028",
     "https://t.me/melhoresdestinos/18972",
@@ -471,7 +472,7 @@
   "funil": {
     "candidatos_do_slug": 0,
     "materias_lidas": 0,
-    "extracoes_falhas": 0,
+    "extracoes_falhas": 1,
     "ofertas_extraidas": 0,
     "explore_destinos": 0,
     "explore_status": "nao_rodou",

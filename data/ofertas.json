@@ -1,5 +1,5 @@
 {
-  "gerado_em": "2026-08-16T13:46:07.776Z",
+  "gerado_em": "2026-08-16T14:41:34.425Z",
   "visto_ate": "2026-08-15T20:16:23+00:00",
   "ultimo_explore": "2026-07-31",
   "fontes": [
@@ -32,7 +32,7 @@
     {
       "nome": "tg:promopassagens",
       "novos": 0,
-      "status": "ok"
+      "status": "vazio"
     }
   ],
   "telegram_vistos": [

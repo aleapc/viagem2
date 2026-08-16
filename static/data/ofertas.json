@@ -1,13 +1,13 @@
 {
-  "gerado_em": "2026-08-16T16:44:14.585Z",
+  "gerado_em": "2026-08-16T17:35:45.099Z",
   "visto_ate": "2026-08-16T09:32:45+00:00",
   "ultimo_explore": "2026-07-31",
   "fontes": [
     {
       "nome": "melhores-destinos",
-      "candidatos": 1,
-      "lidas": 1,
-      "status": "ok"
+      "candidatos": 0,
+      "lidas": 0,
+      "status": "vazio"
     },
     {
       "nome": "google-explore",
@@ -31,7 +31,7 @@
     },
     {
       "nome": "tg:promopassagens",
-      "novos": 1,
+      "novos": 0,
       "status": "ok"
     }
   ],
@@ -480,9 +480,9 @@
     "https://t.me/promopassagens/110057"
   ],
   "funil": {
-    "candidatos_do_slug": 1,
-    "materias_lidas": 1,
-    "extracoes_falhas": 2,
+    "candidatos_do_slug": 0,
+    "materias_lidas": 0,
+    "extracoes_falhas": 0,
     "ofertas_extraidas": 0,
     "explore_destinos": 0,
     "explore_status": "nao_rodou",
@@ -511,9 +511,7 @@
       }
     }
   },
-  "avisos": [
-    "leu matéria e extraiu ZERO oferta — extrator ou prompt quebrado?"
-  ],
+  "avisos": [],
   "perfis": [
     {
       "id": "ale-andreia",

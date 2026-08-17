@@ -1,5 +1,5 @@
 {
-  "gerado_em": "2026-08-17T10:49:22.115Z",
+  "gerado_em": "2026-08-17T11:42:59.468Z",
   "visto_ate": "2026-08-16T09:32:45+00:00",
   "ultimo_explore": "2026-07-31",
   "fontes": [
@@ -16,7 +16,7 @@
     },
     {
       "nome": "tg:melhoresdestinos",
-      "novos": 0,
+      "novos": 2,
       "status": "ok"
     },
     {
@@ -26,7 +26,7 @@
     },
     {
       "nome": "tg:canalpontospravoar",
-      "novos": 1,
+      "novos": 0,
       "status": "ok"
     },
     {
@@ -36,6 +36,8 @@
     }
   ],
   "telegram_vistos": [
+    "https://t.me/melhoresdestinos/18984",
+    "https://t.me/melhoresdestinos/18982",
     "https://t.me/canalpontospravoar/27149",
     "https://t.me/promopassagens/111077",
     "https://t.me/promopassagens/111076",
@@ -485,7 +487,7 @@
   "funil": {
     "candidatos_do_slug": 0,
     "materias_lidas": 0,
-    "extracoes_falhas": 1,
+    "extracoes_falhas": 2,
     "ofertas_extraidas": 0,
     "explore_destinos": 0,
     "explore_status": "nao_rodou",

@@ -1,6 +1,6 @@
 {
-  "gerado_em": "2026-08-17T19:43:46.189Z",
-  "visto_ate": "2026-08-17T14:18:30+00:00",
+  "gerado_em": "2026-08-17T20:46:10.271Z",
+  "visto_ate": "2026-08-17T18:02:26+00:00",
   "ultimo_explore": "2026-07-31",
   "fontes": [
     {
@@ -31,7 +31,7 @@
     },
     {
       "nome": "tg:promopassagens",
-      "novos": 1,
+      "novos": 0,
       "status": "ok"
     }
   ],
@@ -499,7 +499,7 @@
   "funil": {
     "candidatos_do_slug": 1,
     "materias_lidas": 1,
-    "extracoes_falhas": 2,
+    "extracoes_falhas": 1,
     "ofertas_extraidas": 0,
     "explore_destinos": 0,
     "explore_status": "nao_rodou",

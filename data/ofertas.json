@@ -1,5 +1,5 @@
 {
-  "gerado_em": "2026-08-18T22:43:13.150Z",
+  "gerado_em": "2026-08-18T23:39:01.926Z",
   "visto_ate": "2026-08-18T19:51:24+00:00",
   "ultimo_explore": "2026-07-31",
   "fontes": [
@@ -21,7 +21,7 @@
     },
     {
       "nome": "tg:passageirodeprimeira",
-      "novos": 1,
+      "novos": 0,
       "status": "ok"
     },
     {
@@ -31,7 +31,7 @@
     },
     {
       "nome": "tg:promopassagens",
-      "novos": 2,
+      "novos": 0,
       "status": "ok"
     }
   ],
@@ -531,7 +531,7 @@
   "funil": {
     "candidatos_do_slug": 0,
     "materias_lidas": 0,
-    "extracoes_falhas": 3,
+    "extracoes_falhas": 0,
     "ofertas_extraidas": 0,
     "explore_destinos": 0,
     "explore_status": "nao_rodou",
